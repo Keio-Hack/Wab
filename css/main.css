@@ -1,3 +1,16 @@
+body{
+	background-color: rgba(36,36,36,1);
+}
+
+body,html{
+	display: block;
+	height: 1080px;
+	width: 1920px;
+	margin: 0 auto;
+
+}
+
+
 
 /*ここから  html_tag  のスタイル*/
 
@@ -41,7 +54,7 @@ nav{
 	display: block;
 	position: relative;
 	height: 80%;
-	width:16%;
+	width:300px;
 	float:left;
 	margin:0 ;
 	padding-top:6%; 
@@ -52,7 +65,7 @@ nav{
 	display: block;
 	position: relative;
 	height: 80%;
-	width:16%;
+	width:300px;
 	float:right;
 	margin:0 ;
 	padding-top:6%; 
@@ -96,10 +109,9 @@ header p{
 }
 #mainheader{
 	border-radius: 0 0 30px 30px;
-	margin-left: -px;
 	margin-top:-1%; 
 	height: 10%;
-	width: 98.5%;
+	width: 1920px;
 	display: block;
 	float: left;
 	background-color: gray;
@@ -139,7 +151,7 @@ header p{
 	border-radius:5px; 
 	border-top:solid  5px gray; 
 	border-bottom: solid 10px gray;
-	width: 100%;
+	width: 1160px;
 	height: 85%;
 	background-color: rgba(240,240,240,1);
 	position: static;
@@ -161,7 +173,7 @@ header p{
 /*	border-top: solid 5px gray;*/
 	display: block;
 	height: 40%;
-	width: 100%;
+	width: 1160px;
 	float: left;
 	background-color:rgba(255,255,255,0.8);
 	max-height: 40%;
@@ -172,7 +184,7 @@ header p{
 	display: block;
 	float: left;
 	height: 70%;
-	width: 60%;
+	width: 1160px;
 	position: relative;
 }
 /*ここまで　　debug_area  のスタイル*/
@@ -191,7 +203,9 @@ header p{
 	width: 100%;
 }
 
-#openandclose ul,#openandclose li,#openandclose p{
+#openandclose ul,
+#openandclose li,
+#openandclose p{
 	display: block;
 }
 
@@ -227,17 +241,7 @@ a{
 	height: 100%;
 }
 
-body{
-	background-color: rgba(36,36,36,1);
-}
 
-body,html{
-	display: block;
-	height: 95%;
-	min-width: 1400px;
-	min-height: 800px;
-
-}
 
 #maindivs,#mainpage{
 	height: 100%;
@@ -267,13 +271,13 @@ li,p{
 #menuvar{
 	border:solid 2px gray;
 	display: block;
-	background-color: black;
+	background-color: gray;
 	float: left;
 	border-radius: 0 15px 15px 15px;
 	padding-left: 20%;
 	margin-top: -10%;
-	height:800px;
-	width: 110%;
+	height:90%;
+	width: 400%;
 	z-index: 5;
 /*	visibility: hidden;*/
 	position: relative ;

@@ -9,7 +9,7 @@ $(function(){
 		if (count===0) {
 
 			$('#title,#html_tag,#white_editor,#css_tag,img').stop(true).animate({
-				opacity:"0.2"
+				opacity:"0"
 			},
 			200
 			);
@@ -107,7 +107,7 @@ $(function(){
 			// css_tag　の時の処理
 			if(a==0){
 				$('#html_tag').stop(true).animate({
-					width:"0px",
+					width:"0",
 					opacity:0
 				},
 				300
@@ -211,4 +211,3 @@ $(function(){
 
 
 
-v
