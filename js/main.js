@@ -112,20 +112,20 @@ $(function(){
 				},
 				300
 				);
-				$('#white_editor,#white_board,#editor').stop(true).animate({
+				$('#white_editor,#white_board,#editor').animate({
 					width:"2000px"
 				},
 				300
 				);
 				a=1;
 			}else{
-				$('#html_tag').stop(true).animate({
+				$('#html_tag').animate({
 					width:"230%",
 					opacity:1
 				},
 				300
 				);
-				$('#white_editor').stop(true).animate({
+				$('#white_editor').animate({
 					width:"900px"
 				},
 				300
@@ -135,26 +135,26 @@ $(function(){
 		}else{
 			// 普通の処理
 			if(a===0){
-				$('#html_tag').stop(true).animate({
+				$('#html_tag').animate({
 					width:"0px",
 					opacity:0
 				},
 				300
 				);
-				$('#white_editor').stop(true).animate({
+				$('#white_editor').animate({
 					width:"1450px"
 				},
 				300
 				);
 				a=1;
 			}else{
-				$('#html_tag').stop(true).animate({
+				$('#html_tag').animate({
 					width:"230%",
 					opacity:1
 				},
 				300
 				);
-				$('#white_editor').stop(true).animate({
+				$('#white_editor').animate({
 					width:"1220px",
 					margin:"0 auto"
 				},

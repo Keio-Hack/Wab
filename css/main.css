@@ -20,15 +20,23 @@ body,html{
 	width:100%;
 }
 
-nav li{
-	border-radius:10px;
-	border: solid 1px yellow;
+#css_tag nav li{
+/*	border-radius:10px;
+	border: solid 1px yellow;*/
 /*	background-color: yellow;*/
 	text-align: center;
 	height: 30%;
 	width: 98%;
 	margin-bottom: 5%;
 }
+
+
+#html_tag nav li{
+		border-radius:10px;
+	border: solid 1px yellow;
+}
+
+
 
 nav ul{
 	width: 100%;
@@ -71,6 +79,11 @@ nav{
 	padding-top:6%; 
 	z-index: 1;
 }
+
+#css_tag nav{
+	border: solid 1px yellow;
+	border-radius: 5px;
+} 
 
 #html_tag h,#css_tag h,#js_tag h{
 	display: block;
