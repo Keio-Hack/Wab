@@ -63,7 +63,7 @@ $(function(){
 			300
 			);
 			$('#whiteboard').stop(true).animate({
-				height:"800%"
+				height:"1080px"
 			},
 			600
 			);
@@ -71,7 +71,7 @@ $(function(){
 
 		}else if(countcenter === 1){
 			$('#editor').stop(true).animate({
-				height:"300%"
+				height:"230px"
 			},
 			300
 			);
@@ -112,8 +112,8 @@ $(function(){
 				},
 				300
 				);
-				$('#white_editor').stop(true).animate({
-					width:"1650px"
+				$('#white_editor,#white_board,#editor').stop(true).animate({
+					width:"2000px"
 				},
 				300
 				);
@@ -142,7 +142,7 @@ $(function(){
 				300
 				);
 				$('#white_editor').stop(true).animate({
-					width:"1150px"
+					width:"1450px"
 				},
 				300
 				);
@@ -155,7 +155,8 @@ $(function(){
 				300
 				);
 				$('#white_editor').stop(true).animate({
-					width:"900px"
+					width:"1220px",
+					margin:"0 auto"
 				},
 				300
 				);
