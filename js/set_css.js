@@ -2,7 +2,9 @@
  	var set_text_form = document.forms.set_css.set_text;
  	set_text_form.onchange = function(event){
  		// alert(event.target.value);
+
  		target_on_whiteboard.querySelectorAll("p")[0].innerHTML = event.target.value;
+
  	}
  	set_text_form.onclick = function(){
  		// alert("stopPropagation");
@@ -12,6 +14,7 @@
  $(function(){
  	var body = document.body;
  	body.onclick = function(event){
+
  		if(target_on_whiteboard){
  			 // alert("set_text_form.valueaaaf");
  			var set_text_form = document.forms.set_css.set_text;
@@ -22,6 +25,7 @@
  			}
  			target_on_whiteboard = null;
  		}
+
 
  	}
  });

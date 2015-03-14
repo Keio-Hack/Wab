@@ -121,6 +121,7 @@ whiteboard.ondrop = function(event){
 
 		whiteboardHtmlInfo["html"]["body"][NewElement.id] = new ContentInfo(NewElement.id, NewElement.style.left, NewElement.style.top, NewElement.innerHTML, "");
 
+
 		target_on_whiteboard = NewElement;
 		target_on_whiteboard.classList.add('cursored_object_on_whiteboard');
 		var set_text_form = document.forms.set_css.set_text;
@@ -148,6 +149,8 @@ whiteboard.ondrop = function(event){
 		var test_p_in_newelement = test_newelement.querySelectorAll("p")[0];
 		console.log(test_p_in_newelement.innerHTML);
 		if(test_p_in_newelement.onclick)console.log(test_p_in_newelement.onclick.toString());
+
+
 
 
 		$(NewElement).draggable({
