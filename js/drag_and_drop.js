@@ -66,7 +66,7 @@ whiteboard.ondrop = function(event){
 	console.log(event.clientY);
 
 	var getStringFromDataTransfer = event.dataTransfer.getData("text/plain");
-	alert(getStringFromDataTransfer);
+	// alert(getStringFromDataTransfer);
 	var reg = /(.+)and(.+)and(.+)end(.+)/;
 	var StringArray = reg.exec(getStringFromDataTransfer);
 	//ドラッグ開始時に渡したデータの取得
@@ -78,7 +78,8 @@ whiteboard.ondrop = function(event){
 		var mousePositionInButton = {x : StringArray[1], y : StringArray[2]};
 
 		var NewElement = document.createElement("div");
-		NewElement.innerHTML = StringArray[4];
+
+		NewElement.innerHTML = "<p>p</p>";
 		//div要素の中にp要素が入る
 		NewElement.draggable = "true";
 		//div要素をドラッグ可能に
@@ -120,6 +121,7 @@ whiteboard.ondrop = function(event){
 
 		whiteboardHtmlInfo["html"]["body"][NewElement.id] = new ContentInfo(NewElement.id, NewElement.style.left, NewElement.style.top, NewElement.innerHTML, "");
 
+
 		NewElement.onclick = function(event){
 			target_on_whiteboard = event.target;
 			var set_text_form = document.forms.set_css.set_text;
@@ -130,8 +132,16 @@ whiteboard.ondrop = function(event){
 
 		// (NewElement.querySelectorAll("p"))[0].draggable = false;
 
+
 		$(NewElement).draggable({
 		containment : "parent",
+		// start : function(event, ui){
+		// 	target_on_whiteboard = ui.helper;
+		// 	var set_text_form = document.forms.set_css.set_text;
+		// 	set_text_form.disabled = false;
+		// 	set_text_form.value = ui.helper.html();
+		// 	event.stopPropagation();
+		// },
 		stop : function(event, ui){
 			whiteboardHtmlInfo["html"]["body"][event.target.id]["positionX"] = ui.position.left + "px";
 			whiteboardHtmlInfo["html"]["body"][event.target.id]["positionY"]= ui.position.top + "px";
@@ -140,6 +150,7 @@ whiteboard.ondrop = function(event){
 			// console.log(event.target.getBoundingClientRect().top);
 		}
 		});
+
 	}
 }
 });
