@@ -1,23 +1,24 @@
-$(function(){
-	var whiteboardHtmlInfo = {
+var whiteboardHtmlInfo = {
 	"html" : {
 		"head" : {},
 		"body" : {},
 		"other" : {}
 	},
-	"css" : {
-
-	},
 	"js" : {
 
 	}
 };
+
+var target_on_whiteboard = null;
+
+$(function(){
 var ContentInfo = function (id, position_X, position_Y, text, type){
 	this.id = id;
 	this.positionX = position_X;
 	this.positionY = position_Y;
 	this.text = text;
 	this.type = type;
+	this.css = {};
 };
 
 
@@ -65,7 +66,7 @@ whiteboard.ondrop = function(event){
 	console.log(event.clientY);
 
 	var getStringFromDataTransfer = event.dataTransfer.getData("text/plain");
-	alert(getStringFromDataTransfer);
+	// alert(getStringFromDataTransfer);
 	var reg = /(.+)and(.+)and(.+)end(.+)/;
 	var StringArray = reg.exec(getStringFromDataTransfer);
 	//ドラッグ開始時に渡したデータの取得
@@ -77,7 +78,8 @@ whiteboard.ondrop = function(event){
 		var mousePositionInButton = {x : StringArray[1], y : StringArray[2]};
 
 		var NewElement = document.createElement("div");
-		NewElement.innerHTML = StringArray[4];
+
+		NewElement.innerHTML = "<p>p</p>";
 		//div要素の中にp要素が入る
 		NewElement.draggable = "true";
 		//div要素をドラッグ可能に
@@ -119,10 +121,44 @@ whiteboard.ondrop = function(event){
 
 		whiteboardHtmlInfo["html"]["body"][NewElement.id] = new ContentInfo(NewElement.id, NewElement.style.left, NewElement.style.top, NewElement.innerHTML, "");
 
-		(NewElement.querySelectorAll("p"))[0].draggable = false;
+		target_on_whiteboard = NewElement;
+		target_on_whiteboard.classList.add('cursored_object_on_whiteboard');
+		var set_text_form = document.forms.set_css.set_text;
+		set_text_form.disabled = false;
+		set_text_form.value = target_on_whiteboard.querySelectorAll("p")[0].innerHTML;
+		// alert(NewElement.id + "あsdふぁsdf");
+
+		NewElement.onclick = function(event){
+			// alert(event.currentTarget.outerHTML);
+			target_on_whiteboard = event.currentTarget;
+			if(!target_on_whiteboard.classList.contains("cursored_object_on_whiteboard")){
+				target_on_whiteboard.classList.add("cursored_object_on_whiteboard");
+			}
+			var set_text_form = document.forms.set_css.set_text;
+			set_text_form.disabled = false;
+			set_text_form.value = event.currentTarget.querySelectorAll("p")[0].innerHTML;
+			console.log(target_on_whiteboard.innerHTML + "です");
+			event.stopPropagation();
+		};
+
+		// (NewElement.querySelectorAll("p"))[0].draggable = false;
+		
+		var test_newelement = document.getElementById(NewElement.id);
+		if(test_newelement.onclick)console.log(test_newelement.onclick.toString());
+		var test_p_in_newelement = test_newelement.querySelectorAll("p")[0];
+		console.log(test_p_in_newelement.innerHTML);
+		if(test_p_in_newelement.onclick)console.log(test_p_in_newelement.onclick.toString());
+
 
 		$(NewElement).draggable({
 		containment : "parent",
+		// start : function(event, ui){
+		// 	target_on_whiteboard = ui.helper;
+		// 	var set_text_form = document.forms.set_css.set_text;
+		// 	set_text_form.disabled = false;
+		// 	set_text_form.value = ui.helper.html();
+		// 	event.stopPropagation();
+		// },
 		stop : function(event, ui){
 			whiteboardHtmlInfo["html"]["body"][event.target.id]["positionX"] = ui.position.left + "px";
 			whiteboardHtmlInfo["html"]["body"][event.target.id]["positionY"]= ui.position.top + "px";
@@ -131,6 +167,7 @@ whiteboard.ondrop = function(event){
 			// console.log(event.target.getBoundingClientRect().top);
 		}
 		});
+
 	}
 }
 });

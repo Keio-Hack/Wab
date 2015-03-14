@@ -292,6 +292,12 @@ li,p{
 /*ここまで全体のスタイル*/
 
 
+/* whiteboard上のオブジェクトがクリックされて選択されている間に適用されるスタイル */
+.cursored_object_on_whiteboard{
+	border : dotted 1px Gray;
+}
+
+
 
 
 
