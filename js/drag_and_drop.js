@@ -1,23 +1,24 @@
-$(function(){
-	var whiteboardHtmlInfo = {
+var whiteboardHtmlInfo = {
 	"html" : {
 		"head" : {},
 		"body" : {},
 		"other" : {}
 	},
-	"css" : {
-
-	},
 	"js" : {
 
 	}
 };
+
+var target_on_whiteboard = null;
+
+$(function(){
 var ContentInfo = function (id, position_X, position_Y, text, type){
 	this.id = id;
 	this.positionX = position_X;
 	this.positionY = position_Y;
 	this.text = text;
 	this.type = type;
+	this.css = {};
 };
 
 
@@ -119,7 +120,15 @@ whiteboard.ondrop = function(event){
 
 		whiteboardHtmlInfo["html"]["body"][NewElement.id] = new ContentInfo(NewElement.id, NewElement.style.left, NewElement.style.top, NewElement.innerHTML, "");
 
-		(NewElement.querySelectorAll("p"))[0].draggable = false;
+		NewElement.onclick = function(event){
+			target_on_whiteboard = event.target;
+			var set_text_form = document.forms.set_css.set_text;
+			set_text_form.disabled = false;
+			set_text_form.value = event.target.innerHTML;
+			event.stopPropagation();
+		}
+
+		// (NewElement.querySelectorAll("p"))[0].draggable = false;
 
 		$(NewElement).draggable({
 		containment : "parent",
