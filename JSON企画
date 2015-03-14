@@ -1,0 +1,47 @@
+{
+	"html":{
+		"head":{},
+		"body":[
+			{"asdf":{
+				"position":[0,0],
+				"text":"hello world",
+				"type":"h"
+			}},
+			{"jkl;":{
+				"position":[0,0],
+				"text":"my name is Nakaya",
+				"type":p
+			}}
+		],
+		"other":{},
+	},
+
+	"css":{
+			
+	},
+	
+	"js":{
+		
+	}
+}
+
+
+
+
+var obj = {
+	1234567890:{
+		position:[0,0],
+		text:"hello world",
+		type:"h",
+	},
+
+	2345678890:{
+		position:[0,0],
+		text:"my name is Nakaya"
+		type:"p",
+	}
+}
+
+
+
+

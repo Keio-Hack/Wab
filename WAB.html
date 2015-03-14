@@ -7,7 +7,10 @@
 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
 	<script src="js/main.js"></script>
-	<!-- <script src="js/index.js"></script> -->
+	<script src="js/auto_making_tags.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/drag_and_drop.js"></script>
+	<script src="js/set_css.js" type="text/javascript" charset="utf-8"></script>
+	<!-- 必ず先にauto_making_tags.jsを読み込む -->
 	<title>Web Application Builder</title>
 </head>
 <body id="mainpage">
@@ -44,20 +47,15 @@
 		<div id="html_tag">
 		<h>HTML</h>
 			<nav>
-				<ul>
-
-
-					<!-- ここに li-->
-
-
-					
-					<!-- <li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>
-					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>	
-					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>
-					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>	
+				<ul id="parent_of_draggedbuttons">
+<!-- 					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>
 					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>
 					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>
-					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>	 -->	
+					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>
+					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>
+					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>
+					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>		 -->
+					<!-- ここはauto_making_tags.jsで自動生成 -->
 
 				</ul>
 			</nav>
@@ -96,7 +94,7 @@
 
 		</div>
 
-
+		
 
 		<!-- ここから調整用のdiv -->
 				<div class="white_right"></div>
@@ -111,23 +109,15 @@
 				<h>CSS</h>
 				<nav>
 					<ul>
-
-
-
-
-
-						<!-- ここに li-->
-
-
-
-
-						<!-- <li><p draggable ="true" class ="	draggedbuttons">Tag1</p></li>
-						<li><p draggable ="true" class ="	draggedbuttons">Tag1</p></li>	
-						<li><p draggable ="true" class ="	draggedbuttons">Tag1</p></li>
-						<li><p draggable ="true" class ="	draggedbuttons">Tag1</p></li>	
-						<li><p draggable ="true" class ="	draggedbuttons">Tag1</p></li>
-						<li><p draggable ="true" class ="	draggedbuttons">Tag1</p></li>	
-						<li><p draggable ="true" class ="	draggedbuttons">Tag1</p></li> -->	
+					<form action="WAB.html" name="set_css">
+					<li><label>テキスト：<input disabled type="text" name="set_text" value=""></label></li>
+					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>	
+					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>
+					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>	
+					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>
+					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>	
+					<li><p draggable ="true" class ="draggedbuttons">Tag1</p></li>	
+					</form>
 					</ul>
 				</nav>
 			</div>
