@@ -121,7 +121,6 @@ whiteboard.ondrop = function(event){
 		whiteboardHtmlInfo["html"]["body"][NewElement.id] = new ContentInfo(NewElement.id, NewElement.style.left, NewElement.style.top, NewElement.innerHTML, "");
 
 
-
 		NewElement.onclick = function(event){
 			target_on_whiteboard = event.target;
 			var set_text_form = document.forms.set_css.set_text;
@@ -132,7 +131,6 @@ whiteboard.ondrop = function(event){
 		}
 
 		// (NewElement.querySelectorAll("p"))[0].draggable = false;
-
 
 
 		$(NewElement).draggable({
