@@ -50,7 +50,6 @@ whiteboard.ondragover = function(event){
 }
 
 
-var idCounter = 0;
 //配置した要素につけるIDに使いたい。別の方法があるだろうから、後から変えまする
 function makeRandomID (){
 	var randam = Math.floor(Math.random() * 1000);
@@ -122,15 +121,18 @@ whiteboard.ondrop = function(event){
 		whiteboardHtmlInfo["html"]["body"][NewElement.id] = new ContentInfo(NewElement.id, NewElement.style.left, NewElement.style.top, NewElement.innerHTML, "");
 
 
+
 		NewElement.onclick = function(event){
 			target_on_whiteboard = event.target;
 			var set_text_form = document.forms.set_css.set_text;
 			set_text_form.disabled = false;
 			set_text_form.value = event.target.innerHTML;
+
 			event.stopPropagation();
 		}
 
 		// (NewElement.querySelectorAll("p"))[0].draggable = false;
+
 
 
 		$(NewElement).draggable({
