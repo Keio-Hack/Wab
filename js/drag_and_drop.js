@@ -30,6 +30,8 @@ if(draggedButtons){
 }
 //ドラッグする要素にドラッグイベント開始時のイベントを追加
 for(var i = 0; i < draggedButtons.length; i++){
+	//まず、whiteboard上で表示させるものと選択できるcssの情報を関連付ける
+	
 	draggedButtons[i].ondragstart = function(event){
 		var draggedButtonPosition = event.target.getBoundingClientRect();
 		//配置前のボタンのウィンドウ座標を取得
@@ -121,6 +123,7 @@ whiteboard.ondrop = function(event){
 		whiteboardHtmlInfo["html"]["body"][NewElement.id] = new ContentInfo(NewElement.id, NewElement.style.left, NewElement.style.top, NewElement.innerHTML, "");
 
 
+
 		target_on_whiteboard = NewElement;
 		target_on_whiteboard.querySelectorAll("p")[0].style.fontSize = "12px";
 		target_on_whiteboard.classList.add('cursored_object_on_whiteboard');
@@ -192,6 +195,7 @@ whiteboard.ondrop = function(event){
 		// var test_p_in_newelement = test_newelement.querySelectorAll("p")[0];
 		// console.log(test_p_in_newelement.innerHTML);
 		// if(test_p_in_newelement.onclick)console.log(test_p_in_newelement.onclick.toString());
+
 
 
 

@@ -1,11 +1,11 @@
 /* ここからテキストをセットするためのフォーム*/
+
  $(function(){
  	var set_text_form = document.forms.set_css.set_text;
  	set_text_form.onchange = function(event){
  		// alert(event.target.value);
-
  		target_on_whiteboard.querySelectorAll("p")[0].innerHTML = event.target.value;
-
+ 		whiteboardHtmlInfo.html.body[target_on_whiteboard.id].text = event.target.value;
  	}
  	set_text_form.onclick = function(){
  		// alert("stopPropagation");
@@ -47,6 +47,7 @@ $(function(){
 	var set_font_size_form = document.forms.set_css.set_font_size;
 	set_font_size_form.onchange = function(event){
 		target_on_whiteboard.querySelectorAll("p")[0].style.fontSize = event.target.value;
+		whiteboardHtmlInfo.html.body[target_on_whiteboard.id].css["font-size"] = event.target.value;
 	}
 	set_font_size_form.onclick = function(){
  	// alert("stopPropagation");
