@@ -50,7 +50,6 @@ whiteboard.ondragover = function(event){
 }
 
 
-var idCounter = 0;
 //配置した要素につけるIDに使いたい。別の方法があるだろうから、後から変えまする
 function makeRandomID (){
 	var randam = Math.floor(Math.random() * 1000);
@@ -123,11 +122,41 @@ whiteboard.ondrop = function(event){
 
 
 		target_on_whiteboard = NewElement;
+		target_on_whiteboard.querySelectorAll("p")[0].style.fontSize = "12px";
 		target_on_whiteboard.classList.add('cursored_object_on_whiteboard');
-		var set_text_form = document.forms.set_css.set_text;
-		set_text_form.disabled = false;
-		set_text_form.value = target_on_whiteboard.querySelectorAll("p")[0].innerHTML;
+
+
+		//ここから、ドロップ時にcssの欄にそのオブジェクトのcssを表示させるコード
+		
+		// var set_text_form = document.forms.set_css.set_text;
+		// set_text_form.disabled = false;
+		// set_text_form.value = target_on_whiteboard.querySelectorAll("p")[0].innerHTML;
+
+		// var set_font_size_form = document.forms.set_css.set_font_size;
+		// set_font_size_form.disabled = false;
+		// set_font_size_form.value = target_on_whiteboard.querySelectorAll("p")[0].style.fontSize;
+		
+		// var set_css_form = document.forms.set_css;
+		// for(var formobj in set_css_form){
+		// 	console.log(formobj);
+		// 	set_css_form[formobj].disabled = false;
+		// 	switch(formobj){
+		// 		case "set_text" : set_css_form[formobj].value = target_on_whiteboard.querySelectorAll("p")[0].innerHTML; break;
+		// 		case "set_size" : set_css_form[formobj].value = target_on_whiteboard.querySelectorAll("p")[0].style.fontSize;
+		// 	}
+		// }
+		
+		var set_css_form = document.forms.set_css;
+		for(var i = 0, len = set_css_form.length; i < len; i++){
+			set_css_form[i].disabled = false;
+			switch(i){
+				case 0 : set_css_form[i].value = target_on_whiteboard.querySelectorAll("p")[0].innerHTML; break;
+				case 1 : set_css_form[i].value = target_on_whiteboard.querySelectorAll("p")[0].style.fontSize; break;
+			}
+		}
 		// alert(NewElement.id + "あsdふぁsdf");
+
+		//ここまで、ドロップ時にcssの欄にそのオブジェクトのcssを表示させるコード
 
 		NewElement.onclick = function(event){
 			// alert(event.currentTarget.outerHTML);
@@ -135,20 +164,34 @@ whiteboard.ondrop = function(event){
 			if(!target_on_whiteboard.classList.contains("cursored_object_on_whiteboard")){
 				target_on_whiteboard.classList.add("cursored_object_on_whiteboard");
 			}
-			var set_text_form = document.forms.set_css.set_text;
-			set_text_form.disabled = false;
-			set_text_form.value = event.currentTarget.querySelectorAll("p")[0].innerHTML;
+			// var set_text_form = document.forms.set_css.set_text;
+			// set_text_form.disabled = false;
+			// set_text_form.value = target_on_whiteboard.querySelectorAll("p")[0].innerHTML;
+
+			// var set_font_size_form = document.forms.set_css.set_font_size;
+			// set_font_size_form.disabled = false;
+			// set_font_size_form.value = target_on_whiteboard.querySelectorAll("p")[0].style.fontSize;
+			
+			var set_css_form = document.forms.set_css;
+			for(var i = 0, len = set_css_form.length; i < len; i++){
+			set_css_form[i].disabled = false;
+			switch(i){
+				case 0 : set_css_form[i].value = target_on_whiteboard.querySelectorAll("p")[0].innerHTML; break;
+				case 1 : set_css_form[i].value = target_on_whiteboard.querySelectorAll("p")[0].style.fontSize;
+			}
+		}
+
 			console.log(target_on_whiteboard.innerHTML + "です");
 			event.stopPropagation();
 		};
 
 		// (NewElement.querySelectorAll("p"))[0].draggable = false;
 		
-		var test_newelement = document.getElementById(NewElement.id);
-		if(test_newelement.onclick)console.log(test_newelement.onclick.toString());
-		var test_p_in_newelement = test_newelement.querySelectorAll("p")[0];
-		console.log(test_p_in_newelement.innerHTML);
-		if(test_p_in_newelement.onclick)console.log(test_p_in_newelement.onclick.toString());
+		// var test_newelement = document.getElementById(NewElement.id);
+		// if(test_newelement.onclick)console.log(test_newelement.onclick.toString());
+		// var test_p_in_newelement = test_newelement.querySelectorAll("p")[0];
+		// console.log(test_p_in_newelement.innerHTML);
+		// if(test_p_in_newelement.onclick)console.log(test_p_in_newelement.onclick.toString());
 
 
 
