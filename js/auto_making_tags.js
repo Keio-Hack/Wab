@@ -1,3 +1,4 @@
+
 var get_json_info = (function(){
 	var obj_info_before = [
 		{"type" : "p", "css" : {"innerHTML" : {"value" : "テキストを入力してください", "label_text" : "テキスト"}, "fontSize" : {"value" : "12px", "label_text" : "フォントサイズ"}, "color" : {"value" : "black", "label_text" : "文字の色"}}},
@@ -18,5 +19,6 @@ $(function(){
 	var testarray = ["p", "h1", "img", "ul", "table", "li", "a"];
 	for(var i = 0; i < getstring.length; i++){
 		parentobj.append($("<li><p draggable = 'true' class = 'draggedbuttons'>" + getstring[i].type + "</p></li>"));
+
 	}
 });

@@ -287,14 +287,18 @@ li,p{
 }
 
 
+
 .save input{
+
 	height:500px;
 	width: 100%;
 	float: left;
 	color: yellow;
 }
 
+
 .save p{
+
 	color: hsl(0.0, 0.0%, 100.0%);
 	text-align: center;
 }
