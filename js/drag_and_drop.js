@@ -35,7 +35,12 @@ for(var i = 0; i < draggedButtons.length; i++){
 		//配置前のボタンのウィンドウ座標を取得
 		var mouseposition = {x : event.clientX, y : event.clientY};
 		//マウスのウィンドウ座標を取得
-		var settext = (mouseposition.x - draggedButtonPosition.left) + "and" + (mouseposition.y - draggedButtonPosition.top) + "and" + event.target.className +"end" + event.target.outerHTML;
+		// var settext = (mouseposition.x - draggedButtonPosition.left) + "and" + (mouseposition.y - draggedButtonPosition.top) + "and" + event.target.className +"end" + event.target.outerHTML;
+		// if(draggedButtons[i].css_info_json){
+		// 	var settext = (mouseposition.x - draggedButtonPosition.left) + "and" + (mouseposition.y - draggedButtonPosition.top) + "and" + event.target.className +"end" + draggedButtons[i].css_info_json;
+		// }else{
+			var settext = (mouseposition.x - draggedButtonPosition.left) + "and" + (mouseposition.y - draggedButtonPosition.top) + "and" + event.target.className +"end" + event.target.outerHTML;
+		// }
 		console.log(settext);
 		event.dataTransfer.setData("text/plain",settext);
 	}
